@@ -1,0 +1,139 @@
+:root {
+    --main-font-family: 'Roboto Mono', monospace;
+}
+
+/* Colocamos la imagen en el centro de la cabecera */
+header {
+    display: flex;
+    justify-content: center;
+}
+header img{
+    width: 25%;
+    height: auto;
+}
+p{
+    color: white;
+    font-size: 120%;
+    font-family: var(--main-font-family);
+    text-align: justify;
+    line-height: 1.5;
+    margin-right: 3%;
+}
+body{
+    background-color: black;
+    margin: 10px;
+}
+
+/* Configuramos el nav para que los enlaces cambien de color cuando se pasa el ratón por encima */
+nav{
+    margin-top: -5%;
+    text-align: center;
+}
+nav a{
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-family: var(--main-font-family);  
+}
+nav a:hover{
+    color: red;
+}
+/* Configuramos el desplegable del nav*/
+ul li{
+    display: inline-block;
+    position: relative;
+    font-size: 120%;
+    padding: 20px;
+}
+/* Submenú de recetas */
+#submenu{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+#caja_recetas:hover #submenu {
+    display: block;
+}
+#submenu a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    padding: 8px;
+}
+#submenu a:hover {
+    background-color: #d27616;
+}
+
+/* Submenú de consejos */
+#submenu2{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+#caja_tips:hover #submenu2 {
+    display: block;
+}
+#submenu2 a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    padding: 8px;
+}
+#submenu2 a:hover {
+    background-color: #d27616;
+}
+
+/* Footer */
+footer{
+    margin-top: 3%;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: auto;
+}
+footer p {
+    font-size: 90%;
+}
+#contacto{
+    grid-row: 1/1;
+    align-self: center;
+    text-align: center;
+}
+#reservas{
+    grid-row: 2/1;
+    align-self: center;
+    text-align: center;
+}
+#derechos{
+    grid-row: 3/1;
+    align-self: center;
+    text-align: center;
+}
+
+/* CSS ESPECÍFICO */
+
+h2{
+    color: white;
+    font-size: 140%;
+    text-align: center;
+    color: #d27616;
+}
+
+h1{
+    color: white;
+    font-size: 200%;
+    color: #d27616;
+}
+
+section{
+    margin-top: 5%;
+}

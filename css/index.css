@@ -1,0 +1,254 @@
+/* Variable para definir el tipo de letra de toda la web */
+:root {
+    --main-font-family: 'Roboto Mono', monospace;
+}
+
+/* Colocamos la imagen en el centro de la cabecera */
+header {
+    display: flex;
+    justify-content: center;
+}
+header img{
+    width: 25%;
+    height: auto;
+}
+p{
+    color: white;
+    font-size: 120%;
+    font-family: var(--main-font-family)
+}
+body{
+    background-color: black;
+    margin: 10px;
+}
+
+/* Configuramos el nav para que los enlaces cambien de color cuando se pasa el ratón por encima */
+nav{
+    margin-top: -5%;
+    text-align: center;
+}
+nav a{
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-family: var(--main-font-family);  
+}
+nav a:hover{
+    color: red;
+}
+/* Configuramos el desplegable del nav*/
+ul li{
+    display: inline-block;
+    position: relative;
+    font-size: 120%;
+    padding: 20px;
+}
+/* Submenú de recetas */
+#submenu{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+#caja_recetas:hover #submenu {
+    display: block;
+}
+#submenu a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    padding: 8px;
+}
+#submenu a:hover {
+    background-color: #d27616;
+}
+
+/* Submenú de consejos */
+#submenu2{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+#caja_tips:hover #submenu2 {
+    display: block;
+}
+#submenu2 a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    padding: 8px;
+}
+#submenu2 a:hover {
+    background-color: #d27616;
+}
+
+
+
+/* Preparamos el cuerpo principal del index con grid */
+section{
+    display: grid;
+    grid-template-areas: 
+    "f1"
+    "f2"
+    "f3";
+    gap: 10px;
+}
+section p {
+    text-align: justify;
+}
+
+/* Configuramos cada article del section con grid */
+/* ART 1 */
+#en_su_punto{
+    display: grid;
+    grid-area: f1;
+    grid-template-areas: 
+    "f1i f1p";
+    gap: 10px;
+    align-items: center;
+}
+#en_su_punto div{
+    grid-area: f1p;
+    margin: 5%;
+}
+#en_su_punto img{
+    grid-area: f1i;
+}
+/* ART 2 */
+#especialista_carnes{
+    grid-area: f2;
+    display: grid;
+    grid-template-areas: 
+    "f2p f2i ";
+    gap: 1%;
+    align-items: center;
+}
+#especialista_carnes div{
+    grid-area: f2p;
+    margin: 5%;
+}
+#especialista_carnes img{
+    grid-area: f2i
+}
+/* ART 3 */
+#ambiente{
+    grid-area: f3;
+    display: grid;
+    grid-template-areas: 
+    "f3i f3p";
+    gap: 10px;
+    align-items: center;
+}
+#ambiente div{
+    grid-area: f3p;
+    margin: 5%;
+}
+#ambiente img{
+    grid-area: f3i
+}
+
+/* Footer */
+footer{
+    margin-top: 3%;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: auto;
+}
+footer p {
+    font-size: 90%;
+}
+#contacto{
+    grid-row: 1/1;
+    align-self: center;
+    text-align: center;
+}
+#reservas{
+    grid-row: 2/1;
+    align-self: center;
+    text-align: center;
+}
+#derechos{
+    grid-row: 3/1;
+    align-self: center;
+    text-align: center;
+}
+
+/* Configuramos el sitio para que sus elementos se dispongan de manera diferente con un tamaño de pantalla de hasta 1024px */
+@media(max-width: 1024px){
+    /* Solo tocamos los article, tanto el header como el footer se mantendrán igual */
+    /* ART 1 */
+    #en_su_punto{
+        display: grid;
+        grid-area: f1;
+        grid-template-columns: 100%;
+        grid-template-rows: auto auto;
+        grid-template-areas: 
+        "f1i f1i"
+        "f1p f1p";
+        gap: 10px;
+        
+    } 
+    #en_su_punto p{
+        grid-area: f1p;
+        align-self: center;
+        margin-right: 3%;
+        margin-left: 3%;
+    }
+    #en_su_punto img{
+        grid-area: f1i;
+        justify-self: center;
+    }
+    /* ART 2 */
+    #especialista_carnes{
+        grid-area: f2;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "f2i f2i"
+        "f2p f2p";
+        gap: 10px;
+    }
+    #especialista_carnes p{
+        grid-area: f2p;
+        margin-right: 30px;
+        align-self: center;
+        margin-right: 3%;
+        margin-left: 3%;
+    }
+    #especialista_carnes img{
+        grid-area: f2i;
+        justify-self: center;
+    }
+    /* ART 3 */
+    #ambiente{
+        grid-area: f3;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "f3i f3i"
+        "f3p f3p";
+        gap: 10px;
+    }
+    #ambiente p{
+        grid-area: f3p;
+        margin-right: 30px;
+        align-self: center;
+        margin-right: 3%;
+        margin-left: 3%;
+    }
+    #ambiente img{
+        grid-area: f3i;
+        justify-self: center;
+    }
+}
